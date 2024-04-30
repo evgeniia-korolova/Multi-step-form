@@ -1,0 +1,120 @@
+:root {
+    --main-color: rgb(9, 9, 169);
+    --secondary-color: rgb(128, 128, 246);
+    --light-color: rgb(230, 230, 249);
+    --lighter-color: rgb(197, 197, 249);
+    --dark-color: rgb(44, 44, 50);
+    --bg-main-color: rgb(246, 249, 249);
+
+    --font-smaller: 14px;
+    --font-bigger: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--dark-color);
+    background: var(--bg-main-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0 .5em;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2em;
+    margin-top: 3em;
+}
+
+.form-box {
+    display: flex;
+    border: 8px solid var(--lighter-color);
+    border-radius: 15px;
+    padding: 2em;
+    background: var(--light-color);
+}
+
+/* progress */
+
+.form-box .progress {
+    position: relative;
+    padding: 2em;
+}
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.step > span {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-smaller);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1em;
+    border-radius: 50%;
+    background: var(--lighter-color);
+    z-index: 1;
+}
+
+.step.active > span {
+    color: aliceblue;
+    background: var(--main-color);
+    border: 4px solid var(--secondary-color);
+}
+
+@media screen and (min-width: 768px){
+    .form-box .progress {
+        flex: 1 0 35%;
+        min-width: 300px;
+        padding: 3em;
+    }
+    .progress-steps {
+        flex-direction: column;
+    }
+}
