@@ -14,20 +14,20 @@
                     <ul class="progress-steps">
                         <li class="step active">
                             <span>1</span>
-                            <p>Personal <br></p>
+                            <p>Personal <br><span></span></p>
                         </li>
                         <li class="step">
                             <span>2</span>
-                            <p>Contacts <br></p>
+                            <p>Contacts <br><span></span></p>
                         </li>
                         <li class="step">
                             <span>3</span>
-                            <p>Security<br></p>
+                            <p>Security<br><span></span></p>
                         </li>
                     </ul>
                 </div>
                 <form action="">
-                    <div class="form-one form-step">
+                    <div class="form-one form-step active">
                         <h2>Personal information</h2>
                         <p>Enter your personal information correctly</p>
                         <div>
@@ -41,9 +41,9 @@
                         <div class="birth">
                             <label for="">Date of Birth</label>
                             <div class="groupping">
-                                <input type="text" pattern="[0-9]*" name="day" min="0" max="31">
-                                <input type="text" pattern="[0-9]*" name="month" min="0" max="12">
-                                <input type="text" pattern="[0-9]*" name="year" min="0" max="2050">
+                                <input type="text" pattern="[0-9]*" name="day" min="0" max="31" placeholder="DD">
+                                <input type="text" pattern="[0-9]*" name="month" min="0" max="12" placeholder="MM">
+                                <input type="text" pattern="[0-9]*" name="year" min="0" max="2050" placeholder="YYYY">
                             </div>
                         </div>
                     </div>
@@ -90,16 +90,16 @@
                             <label for="">Confirm Password</label>
                             <input type="password" placeholder="confirm password">
                         </div>
-                        <div>
+                        <div class="checkbox">
                             <input type="checkbox" >
                             <label for="">Accept terms and conditions</label>
                         </div>
                     </div>
 
                     <div class="btn-group">
-                        <button type="button" class="btn btn-prev">Back</button>
+                        <button type="button" class="btn btn-prev"  disabled>Back</button>
                         <button type="button" class="btn btn-next">Next Step</button>
-                        <button type="button" class="btn btn-prev">Submit</button>
+                        <button type="button" class="btn btn-submit">Submit</button>
                     </div>
                 </form>
             </div>
