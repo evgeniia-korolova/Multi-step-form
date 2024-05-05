@@ -30,37 +30,37 @@
                     <div class="form-one form-step active">
                         <h2>Personal information</h2>
                         <p>Enter your personal information correctly</p>
-                        <div>
+                        <div class="form-group">
                             <label for="">First Name</label>
-                            <input type="text" placeholder="e.g. John">
+                            <input type="t ext" name="firstNameInput" pattern="[a-zA-Z]*" placeholder="e.g. John" required>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="">Last Name</label>
-                            <input type="text" placeholder="e.g. Doe">
+                            <input type="text" name="lastNameInput" pattern="[a-zA-Z]*"  placeholder="e.g. Doe" required>
                         </div>
-                        <div class="birth">
+                        <div class="birth form-group">
                             <label for="">Date of Birth</label>
-                            <div class="groupping">
-                                <input type="text" pattern="[0-9]*" name="day" min="0" max="31" placeholder="DD">
-                                <input type="text" pattern="[0-9]*" name="month" min="0" max="12" placeholder="MM">
-                                <input type="text" pattern="[0-9]*" name="year" min="0" max="2050" placeholder="YYYY">
+                            <div class="groupping"> 
+                                <input type="text" pattern="[0-9]*" name="day" min="0" max="31" placeholder="DD" required>
+                                <input type="text" pattern="[0-9]*" name="month" min="0" max="12" placeholder="MM" required>
+                                <input type="text" pattern="[0-9]*" name="year" min="0" max="2024" placeholder="YYYY" required>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-two form-step">
                         <h2>Contacts</h2>
-                        <div>
+                        <div class="form-group">
                             <label for="">Phone</label>
-                            <input type="tel" placeholder="+380xxxxxxxxx">
+                            <input type="tel" placeholder="+380xxxxxxxxx" name="telInput" required>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="">City</label>
-                            <input type="text" placeholder="City">
+                            <input type="text" name="cityInput" pattern="[a-zA-Z]*"  placeholder="City" required>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="">Country</label>
-                            <select name="country" id="country">
+                            <select name="countryInput" id="country" required>
                                 <option value="">Please select</option>
                                 <option value="Ukraine">Ukraine</option>
                                 <option value="Ukraine">USA</option>
@@ -74,24 +74,32 @@
 
                     <div class="form-three form-step">
                         <h2>Security</h2>
-                        <div>
+                        <div class="form-group">
                             <label for="">Email</label>
-                            <input type="email" placeholder="Your email">
+                            <input type="email" name="emailInput" data-val="true" data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" placeholder="Your email" 
+                            data-error-label="emailErrorLabel" data-required="Введите Email">
+                            <span class="error" id="emailErrorLabel">Ошибка email</span>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="">Username</label>
-                            <input type="text" placeholder="Username">
+                            <input type="text" name="usernamedInput" placeholder="Username" required>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="">Password</label>
-                            <input type="password" placeholder="password">
+                            <input type="password" name="passwordInput" data-val="true" placeholder="password" minlength="6" maxlength="12"
+                            data-error-label="passwordErrorLabel"
+                            data-required="Введите пароль">
+                            <span class="error" id="passwordErrorLabel">Ошибка pass</span>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="">Confirm Password</label>
-                            <input type="password" placeholder="confirm password">
+                            <input type="password" name="passwordConfirmInput" data-val="true" placeholder="confirm password"
+                            data-error-label="passwordConfirmErrorLabel"
+                            data-required="Введите подтверждение пароля" data-confirm="password">
+                             <span class="error" id="passwordConfirmErrorLabel">Ошибка confirm</span>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" >
+                        <div class="checkbox form-group">
+                            <input type="checkbox" name="acceptedInput" required>
                             <label for="">Accept terms and conditions</label>
                         </div>
                     </div>
