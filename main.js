@@ -21,6 +21,8 @@ nextBtn.addEventListener('click', () => {
 
 	let inputs = [...currentStep.querySelectorAll('input')];
 	const allValid = inputs.some(input => input.checkValidity())
+	
+	
 	if (allValid) {
 		active++;
 		updateProgress();
