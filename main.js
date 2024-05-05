@@ -8,12 +8,26 @@ const form = document.forms[0];
 let active = 1;
 
 nextBtn.addEventListener('click', () => {
-	if (active > steps.length) {
-		active = steps.length;
+	let currentStep = formSteps[active];
+	let activeInputs = currentStep.querySelectorAll('input');
+
+	for (let i = 0; i < activeInputs.length; i++) {
+		const element = activeInputs[i];
+		let valid = validateElement(element);
+		if (!valid) return;
+		else {
+			if (active > steps.length) {
+				active = steps.length;
+			}
+			active++;
+			console.log(active, steps.length);
+			console.log(currentStep);
+			console.log(activeInputs);
+			updateProgress();
+		}
 	}
-	active++;
-	console.log(active, steps.length);
-	updateProgress();
+	
+	
 });
 
 prevBtn.addEventListener('click', () => {
@@ -78,7 +92,7 @@ validators.required = {
 
 validators.pattern = {
 	isValid: function (element) {
-		let message = 'Введенное значенеи не соответствует шаблону';
+		let message = "Doesn't match the pattern";
 		let regex = new RegExp(element.dataset.pattern);
 		return validators.validate(element, message, () =>
 			regex.test(element.value)
@@ -88,11 +102,13 @@ validators.pattern = {
 
 validators.confirm = {
 	isValid: function (element) {
-		let message = 'Значения не совпадают';
+		let message = "Does't match password";
 		let confirmInput = document.querySelector(
 			'#' + element.dataset.confirm
 		);
+		
 		return validators.validate(
+			
 			element,
 			message,
 			() => element.value == confirmInput.value
@@ -124,5 +140,5 @@ function onChangeHandler(e) {
 }
 
  elements.forEach((element) => {
-		element.addEventListener('input', onChangeHandler);
+		element.addEventListener('change', onChangeHandler);
  });

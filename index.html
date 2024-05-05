@@ -1,120 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-step form</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div id="page" class="site">
-        <div class="container">
-            <div class="form-box">
-                <div class="progress">
-                    <ul class="progress-steps">
-                        <li class="step active">
-                            <span>1</span>
-                            <p>Personal <br><span></span></p>
-                        </li>
-                        <li class="step">
-                            <span>2</span>
-                            <p>Contacts <br><span></span></p>
-                        </li>
-                        <li class="step">
-                            <span>3</span>
-                            <p>Security<br><span></span></p>
-                        </li>
-                    </ul>
-                </div>
-                <form action="">
-                    <div class="form-one form-step active">
-                        <h2>Personal information</h2>
-                        <p>Enter your personal information correctly</p>
-                        <div class="form-group">
-                            <label for="">First Name</label>
-                            <input type="t ext" name="firstNameInput" pattern="[a-zA-Z]*" placeholder="e.g. John" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Last Name</label>
-                            <input type="text" name="lastNameInput" pattern="[a-zA-Z]*"  placeholder="e.g. Doe" required>
-                        </div>
-                        <div class="birth form-group">
-                            <label for="">Date of Birth</label>
-                            <div class="groupping"> 
-                                <input type="text" pattern="[0-9]*" name="day" min="0" max="31" placeholder="DD" required>
-                                <input type="text" pattern="[0-9]*" name="month" min="0" max="12" placeholder="MM" required>
-                                <input type="text" pattern="[0-9]*" name="year" min="0" max="2024" placeholder="YYYY" required>
-                            </div>
-                        </div>
-                    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Multi-step form</title>
+		<link
+			rel="stylesheet"
+			href="./style.css" />
+	</head>
+	<body>
+		<div
+			id="page"
+			class="site">
+			<div class="container">
+				<div class="form-box">
+					<div class="progress">
+						<ul class="progress-steps">
+							<li class="step active">
+								<span>1</span>
+								<p>Personal <br /><span></span></p>
+							</li>
+							<li class="step">
+								<span>2</span>
+								<p>Contacts <br /><span></span></p>
+							</li>
+							<li class="step">
+								<span>3</span>
+								<p>Security<br /><span></span></p>
+							</li>
+						</ul>
+					</div>
+					<form action="./va.html">
+						<div class="form-one form-step active">
+							<h2>Personal information</h2>
+							<p>Enter your personal information correctly</p>
+							<div class="form-group">
+								<label for="">First Name</label>
+								<input
+									type="t ext"
+									name="firstNameInput"
+									pattern="[a-zA-Z]*"
+									placeholder="e.g. John"
+									required />
+							</div>
+							<div class="form-group">
+								<label for="">Last Name</label>
+								<input
+									type="text"
+									name="lastNameInput"
+									pattern="[a-zA-Z]*"
+									placeholder="e.g. Doe"
+									required />
+							</div>
+							<div class="birth form-group">
+								<label for="">Date of Birth</label>
+								<div class="groupping">
+									<input
+										type="text"
+										pattern="[0-9]*"
+										name="day"
+										min="0"
+										max="31"
+										placeholder="DD"
+										required />
+									<input
+										type="text"
+										pattern="[0-9]*"
+										name="month"
+										min="0"
+										max="12"
+										placeholder="MM"
+										required />
+									<input
+										type="text"
+										pattern="[0-9]*"
+										name="year"
+										min="0"
+										max="2024"
+										placeholder="YYYY"
+										required />
+								</div>
+							</div>
+						</div>
 
-                    <div class="form-two form-step">
-                        <h2>Contacts</h2>
-                        <div class="form-group">
-                            <label for="">Phone</label>
-                            <input type="tel" placeholder="+380xxxxxxxxx" name="telInput" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">City</label>
-                            <input type="text" name="cityInput" pattern="[a-zA-Z]*"  placeholder="City" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Country</label>
-                            <select name="countryInput" id="country" required>
-                                <option value="">Please select</option>
-                                <option value="Ukraine">Ukraine</option>
-                                <option value="Ukraine">USA</option>
-                                <option value="Ukraine">Greate Britain</option>
-                                <option value="Ukraine">France</option>
-                                <option value="Ukraine">Italy</option>
-                                <option value="Ukraine">Spain</option>
-                            </select>
-                        </div>
-                    </div>
+						<div class="form-two form-step">
+							<h2>Contacts</h2>
+							<div class="form-group">
+								<label for="">Phone</label>
+								<input
+									type="tel"
+									placeholder="+380xxxxxxxxx"
+									name="telInput"
+									required />
+							</div>
+							<div class="form-group">
+								<label for="">City</label>
+								<input
+									type="text"
+									name="cityInput"
+									pattern="[a-zA-Z]*"
+									placeholder="City"
+									required />
+							</div>
+							<div class="form-group">
+								<label for="">Country</label>
+								<select
+									name="countryInput"
+									id="country"
+									required>
+									<option value="">Please select</option>
+									<option value="Ukraine">Ukraine</option>
+									<option value="Ukraine">USA</option>
+									<option value="Ukraine">
+										Greate Britain
+									</option>
+									<option value="Ukraine">France</option>
+									<option value="Ukraine">Italy</option>
+									<option value="Ukraine">Spain</option>
+								</select>
+							</div>
+						</div>
 
-                    <div class="form-three form-step">
-                        <h2>Security</h2>
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="email" name="emailInput" data-val="true" data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" placeholder="Your email" 
-                            data-error-label="emailErrorLabel" data-required="Введите Email">
-                            <span class="error" id="emailErrorLabel">Ошибка email</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Username</label>
-                            <input type="text" name="usernamedInput" placeholder="Username" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Password</label>
-                            <input type="password" name="passwordInput" data-val="true" placeholder="password" minlength="6" maxlength="12"
-                            data-error-label="passwordErrorLabel"
-                            data-required="Введите пароль">
-                            <span class="error" id="passwordErrorLabel">Ошибка pass</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Confirm Password</label>
-                            <input type="password" name="passwordConfirmInput" data-val="true" placeholder="confirm password"
-                            data-error-label="passwordConfirmErrorLabel"
-                            data-required="Введите подтверждение пароля" data-confirm="password">
-                             <span class="error" id="passwordConfirmErrorLabel">Ошибка confirm</span>
-                        </div>
-                        <div class="checkbox form-group">
-                            <input type="checkbox" name="acceptedInput" required>
-                            <label for="">Accept terms and conditions</label>
-                        </div>
-                    </div>
+						<div class="form-three form-step">
+							<h2>Security</h2>
+							<div class="form-group">
+								<label for="">Email</label>
+								<input
+									type="email"
+									name="emailInput"
+									data-val="true"
+									data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+									placeholder="Your email"
+									data-error-label="emailErrorLabel"
+									data-required="Введите Email" />
+								<span
+									class="error"
+									id="emailErrorLabel"
+									>Ошибка email</span
+								>
+							</div>
+							<div class="form-group">
+								<label for="">Username</label>
+								<input
+									type="text"
+									name="usernamedInput"
+									placeholder="Username"
+									required />
+							</div>
+							<div class="form-group">
+								<label for="">Password</label>
+								<input
+									type="password"
+									name="password"
+									data-val="true"
+									data-required="Введите пароль"
+									id="password"
+									data-error-label="passwordErrorLabel" />
+								<span
+									class="error"
+									id="passwordErrorLabel"
+									>Ошибка pass</span
+								>
+							</div>
+							<div class="form-group">
+								<label for="">Confirm Password</label>
+								<input
+									type="password"
+									name="passwordConfirm"
+									id="passwordConfirm"
+									data-val="true"
+									data-required="Введите подтверждение пароля"
+									data-confirm="password"
+									data-error-label="passwordConfirmErrorLabel" />
+								<span
+									class="error"
+									id="passwordConfirmErrorLabel"
+									>Ошибка confirm</span
+								>
+							</div>
+							<div class="checkbox form-group">
+								<input
+									type="checkbox"
+									name="acceptedInput"
+									required />
+								<label for=""
+									>Accept terms and conditions</label
+								>
+							</div>
+						</div>
 
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-prev"  disabled>Back</button>
-                        <button type="button" class="btn btn-next">Next Step</button>
-                        <button type="button" class="btn btn-submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+						<div class="btn-group">
+							<button
+								type="button"
+								class="btn btn-prev"
+								disabled>
+								Back
+							</button>
+							<button
+								type="button"
+								class="btn btn-next">
+								Next Step
+							</button>
+							<button
+								type="button"
+								class="btn btn-submit">
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-
-   <script src="./main.js"></script> 
-</body>
+		<script src="./main.js"></script>
+	</body>
 </html>

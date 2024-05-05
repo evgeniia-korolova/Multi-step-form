@@ -191,7 +191,8 @@ form > div:not(.btn-group) {
 .error {
     position: absolute;
     top: -3px;
-    left: 157px;
+    /* left: 157px; */
+    right: 0;
     color: red;
 }
 
@@ -297,4 +298,5 @@ input:invalid {
 		padding: 3em;
 		border-radius: 0 15px 15px 0;
 	}
+    
 }
