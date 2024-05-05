@@ -8,26 +8,24 @@ const form = document.forms[0];
 let active = 1;
 
 nextBtn.addEventListener('click', () => {
-	let currentStep = formSteps[active];
-	let activeInputs = currentStep.querySelectorAll('input');
+	let currentStep = document.querySelector('.form-step.active');
+	// let activeInputs = currentStep.querySelectorAll('input');
 
-	for (let i = 0; i < activeInputs.length; i++) {
-		const element = activeInputs[i];
-		let valid = validateElement(element);
-		if (!valid) return;
-		else {
-			if (active > steps.length) {
-				active = steps.length;
-			}
-			active++;
-			console.log(active, steps.length);
-			console.log(currentStep);
-			console.log(activeInputs);
-			updateProgress();
-		}
+	if (active > steps.length) {
+		active = steps.length;
 	}
 	
-	
+	console.log(active, steps.length);
+	console.log(currentStep);
+	// console.log(activeInputs);
+
+	let inputs = [...currentStep.querySelectorAll('input')];
+	const allValid = inputs.some(input => input.checkValidity())
+	if (allValid) {
+		active++;
+		updateProgress();
+	}
+
 });
 
 prevBtn.addEventListener('click', () => {
