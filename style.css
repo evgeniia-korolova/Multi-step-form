@@ -190,10 +190,10 @@ form > div:not(.btn-group) {
 
 .error {
     position: absolute;
-    top: -3px;
-    /* left: 157px; */
+    top: 59px;    
     right: 0;
     color: rgb(227, 84, 84);
+	font-size: 12px;
 }
 
 @keyframes fadeIn {

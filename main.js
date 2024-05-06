@@ -7,6 +7,12 @@ const form = document.forms[0];
 
 let active = 0;
 
+submittBtn.addEventListener('submit', onSubmitHandler);
+
+ function onSubmitHandler() {
+		return false
+ }
+
 nextBtn.addEventListener('click', validatePage);
 
 
@@ -29,6 +35,17 @@ if (active > steps.length) {
 
 	let allValid = inputs.every((input) => input.checkValidity());
 
+	
+	
+	for (let i = 0; i < inputs.length; i++) {
+		const element = inputs[i];
+		let valid = validateElement(element);
+		if (!valid) {
+			
+			return;
+		}
+	}
+
 if (allValid) {
 	active++;
 	updateProgress();
@@ -38,6 +55,8 @@ if (allValid) {
 	console.log('Invalid input');
 }
 }
+
+
 
 prevBtn.addEventListener('click', () => {
 	if (active < 0) {
@@ -104,7 +123,7 @@ validators.validate = function (element, message, conditions) {
 
 validators.required = {
 	isValid: function (element) {
-		// let message = element.dataset.required;
+		
 		let message = element.dataset.required;
 		return validators.validate(
 			element,
@@ -116,7 +135,8 @@ validators.required = {
 
 validators.pattern = {
 	isValid: function (element) {
-		let message = "Doesn't match the pattern";
+		// let message = "Doesn't match the pattern";
+		let message = element.dataset.required;
 		let regex = new RegExp(element.dataset.pattern);
 		return validators.validate(element, message, () =>
 			regex.test(element.value)
