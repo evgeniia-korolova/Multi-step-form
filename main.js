@@ -5,6 +5,8 @@ const steps = document.querySelectorAll('.step');
 const formSteps = document.querySelectorAll('.form-step');
 const form = document.forms[0];
 
+resultBtn = document.querySelector('.result')
+
 const PSWD_EYE_BTNS = document.querySelectorAll('.eye');
 const PSWD_EYE_SLASH_BTNS = document.querySelectorAll('.eye-slash');
 
@@ -12,9 +14,20 @@ let active = 0;
 
 submittBtn.addEventListener('submit', onSubmitHandler);
 
- function onSubmitHandler() {
+function onSubmitHandler() {	
 		return false
- }
+}
+
+resultBtn.addEventListener('click', renderResult)
+
+function renderResult() {
+	for (let i = 0; i < form.elements.length; i++) {
+		const element = form.elements[i];
+		console.log(element.value)
+	}
+}
+ 
+
 
 nextBtn.addEventListener('click', validatePage);
 
@@ -36,7 +49,7 @@ if (active > steps.length) {
 	console.log('Active inputs', activeInputs)
 	console.log(active, steps.length);
 
-	let allValid = inputs.every((input) => input.checkValidity());
+	let allValid = inputs.every((input) => input.reportValidity());
 
 	
 	
