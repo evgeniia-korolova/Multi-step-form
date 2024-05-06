@@ -27,7 +27,7 @@ if (active > steps.length) {
 	console.log('Active inputs', activeInputs)
 	console.log(active, steps.length);
 
-	let allValid = inputs.some((input) => input.checkValidity());
+	let allValid = inputs.every((input) => input.checkValidity());
 
 if (allValid) {
 	active++;
