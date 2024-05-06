@@ -215,9 +215,13 @@ input:valid {
 	border: 1px solid var(--dark-color);
 }
 
-input:invalid {
+/* input:invalid {
 	border: 2px solid rgb(227, 84, 84);
-}
+} */
+
+input:not(:placeholder-shown):invalid {
+       border: 1px solid red;
+   }
 
 /* => Buttons */
 

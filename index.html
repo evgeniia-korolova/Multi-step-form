@@ -91,7 +91,7 @@
 									placeholder="+380xxxxxxxxx"
                                     data-val="true" 
 									name="telInput"
-                                    data-pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+                                    data-pattern="[/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/]"
 									data-required="Enter tel.number" 
                                     data-error-label="telErrorLabel"/>
                                     <span class="error" id="telErrorLabel"></span>
