@@ -193,7 +193,7 @@ form > div:not(.btn-group) {
     top: -3px;
     /* left: 157px; */
     right: 0;
-    color: red;
+    color: rgb(227, 84, 84);
 }
 
 @keyframes fadeIn {
@@ -216,7 +216,7 @@ input:valid {
 }
 
 input:invalid {
-	border: 2px solid red;
+	border: 2px solid rgb(227, 84, 84);
 }
 
 /* => Buttons */

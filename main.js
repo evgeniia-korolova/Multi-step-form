@@ -5,34 +5,43 @@ const steps = document.querySelectorAll('.step');
 const formSteps = document.querySelectorAll('.form-step');
 const form = document.forms[0];
 
-let active = 1;
+let active = 0;
 
-nextBtn.addEventListener('click', () => {
+nextBtn.addEventListener('click', validatePage);
+
+
+
+function validatePage() {
+
+if (active > steps.length) {
+	active = steps.length;
+}
 	let currentStep = document.querySelector('.form-step.active');
-	// let activeInputs = currentStep.querySelectorAll('input');
-
-	if (active > steps.length) {
-		active = steps.length;
-	}
-	
-	console.log(active, steps.length);
+	let activeStep = formSteps[active];
 	console.log(currentStep);
-	// console.log(activeInputs);
+	console.log(activeStep);
 
 	let inputs = [...currentStep.querySelectorAll('input')];
-	const allValid = inputs.some(input => input.checkValidity())
-	
-	
-	if (allValid) {
-		active++;
-		updateProgress();
-	}
+	let activeInputs = [...activeStep.querySelectorAll('input')];
+	console.log('inputs', inputs)
+	console.log('Active inputs', activeInputs)
+	console.log(active, steps.length);
 
-});
+	let allValid = inputs.some((input) => input.checkValidity());
+
+if (allValid) {
+	active++;
+	updateProgress();
+	
+	console.log(active, steps.length);
+} else {
+	console.log('Invalid input');
+}
+}
 
 prevBtn.addEventListener('click', () => {
-	if (active < 1) {
-		active = 1;
+	if (active < 0) {
+		active = 0;
 	}
 	active--;
 	updateProgress();
@@ -40,23 +49,37 @@ prevBtn.addEventListener('click', () => {
 
 const updateProgress = () => {
 	steps.forEach((step, i) => {
-		if (i === active - 1) {
+		if (i === active) {
 			step.classList.add('active');
 			formSteps[i].classList.add('active');
 		} else {
 			step.classList.remove('active');
 			formSteps[i].classList.remove('active');
 		}
+		
 	});
-	if (active === 1) {
+	if (active === 0) {
 		prevBtn.disabled = true;
-	} else if (active === steps.length) {
+	} else if (active === steps.length - 1) {
 		nextBtn.disabled = true;
 	} else {
 		prevBtn.disabled = false;
 		nextBtn.disabled = false;
 	}
 };
+
+function onSubmitHandler(e) {
+	for (let i = 0; i < form.elements.length; i++) {
+		const element = form.elements[i];
+		let valid = validateElement(element);
+		if (!valid) {
+			console.log('form invalid')
+			e.preventDefault();
+		}
+	}
+}
+
+form.addEventListener('submit', onSubmitHandler);
 
 let elements = document.querySelectorAll("[data-val='true']");
 
@@ -81,6 +104,7 @@ validators.validate = function (element, message, conditions) {
 
 validators.required = {
 	isValid: function (element) {
+		// let message = element.dataset.required;
 		let message = element.dataset.required;
 		return validators.validate(
 			element,
