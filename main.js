@@ -5,6 +5,9 @@ const steps = document.querySelectorAll('.step');
 const formSteps = document.querySelectorAll('.form-step');
 const form = document.forms[0];
 
+const PSWD_EYE_BTNS = document.querySelectorAll('.eye');
+const PSWD_EYE_SLASH_BTNS = document.querySelectorAll('.eye-slash');
+
 let active = 0;
 
 submittBtn.addEventListener('submit', onSubmitHandler);
@@ -185,4 +188,25 @@ function onChangeHandler(e) {
 
  elements.forEach((element) => {
 		element.addEventListener('change', onChangeHandler);
+ });
+
+ PSWD_EYE_SLASH_BTNS.forEach((b) => {
+		b.addEventListener('click', (e) => {
+			const BTN = e.target;
+			BTN.classList.add('hidden');
+			BTN.parentElement.querySelector('.eye').classList.remove('hidden');
+			BTN.parentElement.querySelector('.password-input').type = 'text';
+		});
+ });
+
+ PSWD_EYE_BTNS.forEach((b) => {
+		b.addEventListener('click', (e) => {
+			const BTN = e.target;
+			BTN.classList.add('hidden');
+			BTN.parentElement
+				.querySelector('.eye-slash')
+				.classList.remove('hidden');
+			BTN.parentElement.querySelector('.password-input').type =
+				'password';
+		});
  });

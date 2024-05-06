@@ -196,6 +196,18 @@ form > div:not(.btn-group) {
 	font-size: 12px;
 }
 
+.eye, .eye-slash {
+  position: absolute;
+  padding: 4px;
+  right: 5px;
+  top: 26px;
+  width: 28px;
+}
+
+.hidden {
+  display: none;
+}
+
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
