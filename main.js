@@ -5,28 +5,29 @@ const steps = document.querySelectorAll('.step');
 const formSteps = document.querySelectorAll('.form-step');
 const form = document.forms[0];
 
-resultBtn = document.querySelector('.result')
+const resultBtn = document.querySelector('.result')
 
 const PSWD_EYE_BTNS = document.querySelectorAll('.eye');
 const PSWD_EYE_SLASH_BTNS = document.querySelectorAll('.eye-slash');
 
 let active = 0;
 
-submittBtn.addEventListener('submit', onSubmitHandler);
+form.addEventListener('submit', onSubmitHandler);
 
-function onSubmitHandler() {	
-		return false
-}
-
-resultBtn.addEventListener('click', renderResult)
-
-function renderResult() {
+function onSubmitHandler(e) {
 	for (let i = 0; i < form.elements.length; i++) {
 		const element = form.elements[i];
-		console.log(element.value)
+		let valid = validateElement(element);
+		if (!valid) {
+			console.log('form invalid')
+			e.preventDefault();
+			return false;
+		}
 	}
 }
- 
+
+
+// resultBtn.addEventListener('click', renderResult)
 
 
 nextBtn.addEventListener('click', validatePage);
@@ -103,18 +104,9 @@ const updateProgress = () => {
 	}
 };
 
-function onSubmitHandler(e) {
-	for (let i = 0; i < form.elements.length; i++) {
-		const element = form.elements[i];
-		let valid = validateElement(element);
-		if (!valid) {
-			console.log('form invalid')
-			e.preventDefault();
-		}
-	}
-}
 
-form.addEventListener('submit', onSubmitHandler);
+
+// form.addEventListener('submit', onSubmitHandler);
 
 let elements = document.querySelectorAll("[data-val='true']");
 
