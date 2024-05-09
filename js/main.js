@@ -4,6 +4,12 @@ const submittBtn = document.querySelector('.btn-submit');
 const steps = document.querySelectorAll('.step');
 const formSteps = document.querySelectorAll('.form-step');
 const form = document.forms[0];
+const registerBtn = document.querySelector('#register-btn');
+const loginBtn = document.querySelector('#login-btn');
+const registerModal = document.querySelector('#registration-overlay');
+const loginModal = document.querySelector('#login-overlay');
+const closeReg = document.querySelector('.close-registration');
+const closeLogin = document.querySelector('.close-login');
 
 const resultBtn = document.querySelector('.result')
 
@@ -11,6 +17,21 @@ const PSWD_EYE_BTNS = document.querySelectorAll('.eye');
 const PSWD_EYE_SLASH_BTNS = document.querySelectorAll('.eye-slash');
 
 let active = 0;
+
+registerBtn.addEventListener('click', () => {
+	registerModal.classList.toggle('modal-overlay__hidden');
+})
+closeReg.addEventListener('click', () => {
+	registerModal.classList.toggle('modal-overlay__hidden');
+})
+loginBtn.addEventListener('click', () => {
+	loginModal.classList.toggle('modal-overlay__hidden');
+})
+closeLogin.addEventListener('click', () => {
+	loginModal.classList.toggle('modal-overlay__hidden');
+})
+
+
 
 form.addEventListener('submit', onSubmitHandler);
 

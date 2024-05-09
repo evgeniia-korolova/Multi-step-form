@@ -97,6 +97,7 @@ h1 {
 	border: 8px solid var(--lighter-color);
 	border-radius: 15px;
 	background: var(--light-color);
+	position: relative;
 }
 
 /* progress */
@@ -154,6 +155,39 @@ form {
 	background: white;
 	border-radius: 30px 30px 15px 15px;
 }
+
+.close-btn {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 1px solid var(--dark-color);
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+	cursor: pointer;
+}
+
+.close-btn__line {
+	width: 20px;
+	height: 2px;
+	background-color: var(--dark-color);
+	position: absolute;
+	
+}
+
+.close-btn__line:nth-child(1) {
+transform: rotate(45deg);
+}
+
+.close-btn__line:nth-child(2) {
+transform: rotate(-45deg);
+}
+
+
 
 .form-group {
     position: relative;
@@ -232,9 +266,7 @@ form .checkbox input {
   width: 28px;
 }
 
-.hidden {
-  display: none;
-}
+
 
 @keyframes fadeIn {
 	0% {
@@ -274,7 +306,7 @@ input:not(:placeholder-shown):invalid {
 }
 
 .btn-group [class*='btn-'],
-button {
+.btn {
 	background: var(--main-color);
 	color: white;
 	padding: 0.5em 1.5em;
@@ -363,4 +395,29 @@ button {
 		border-radius: 0 15px 15px 0;
 	}
     
+}
+
+.hidden {
+  display: none;
+}
+
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	visibility: visible;
+	opacity: 1;
+	transition: .5s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-overlay__hidden {
+	opacity: 0;
+	visibility: hidden;
 }
