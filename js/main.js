@@ -17,16 +17,14 @@ const PSWD_EYE_BTNS = document.querySelectorAll('.eye');
 const PSWD_EYE_SLASH_BTNS = document.querySelectorAll('.eye-slash');
 
 let active = 0;
+let currentStep;
 
 // ! Modals
 
 registerBtn.addEventListener('click', () => {
 	registerModal.classList.toggle('modal-overlay__hidden');
-	formSteps.forEach(step =>  {
-		step.classList.remove('active');
-	})
-	document.querySelector('.form-one').classList.add('active')
-	
+	validatePage();
+	console.log(active, steps.length);	
 })
 closeReg.addEventListener('click', () => {
 	registerModal.classList.toggle('modal-overlay__hidden');
@@ -42,32 +40,41 @@ closeLogin.addEventListener('click', () => {
 
 form.addEventListener('submit', onSubmitHandler);
 
+// function onSubmitHandler(e) {
+// 	e.preventDefault();
+// 	saveUser();
+	
+// 	for (let i = 0; i < form.elements.length; i++) {
+// 		const element = form.elements[i];
+// 		let valid = validateElement(element);
+// 		if (!valid) {
+// 			console.log('form invalid');			
+// 			return false;
+// 		} else {
+// 			registerModal.classList.toggle('modal-overlay__hidden');
+// 			form.reset();
+// 			console.log('form valid');
+// 			active = 0;
+// 			updateProgress();
+			
+// 			console.log(active, steps.length)
+// 		}
+// 	}	
+// }
+
 function onSubmitHandler(e) {
 	e.preventDefault();
 	saveUser();
+	validatePage();
+	form.reset();
+	active = 0;
+	updateProgress();
+	registerModal.classList.toggle('modal-overlay__hidden');
+	console.log(active, steps.length);
 	
-	for (let i = 0; i < form.elements.length; i++) {
-		const element = form.elements[i];
-		let valid = validateElement(element);
-		if (!valid) {
-			console.log('form invalid');			
-			return false;
-		} else {
-			registerModal.classList.toggle('modal-overlay__hidden');
-			form.reset();
-			console.log('form valid');	
-			active = 0;
-		}
-	}	
 }
-// function onSubmitHandler(e) {
-// 	e.preventDefault();
-// 	validatePage()
-// 	saveUser();
-// 	registerModal.classList.toggle('modal-overlay__hidden');
-// 	form.reset();
-	
-// }
+
+
 
 
 
@@ -75,17 +82,19 @@ function saveUser() {
 	const username = form.querySelector('.username').value;
 	const email = form.querySelector('.email').value;
 	const password = form.querySelector('.password-input').value;
+
 	 let userObj = {
 		 username,
 		 email,
 		 password,
 	}
-	
-	let usersArr = [];
-	usersArr.push(userObj);
-	console.log(usersArr);
 
+		let usersArr = [];
+	usersArr.push(userObj);
+	console.log(usersArr, userObj);
+	
 	localStorage.setItem('users', JSON.stringify(usersArr));
+	
  }
 
 
@@ -102,8 +111,9 @@ function validatePage() {
 if (active > steps.length) {
 	active = steps.length;
 }
-	let currentStep = document.querySelector('.form-step.active');
-	let activeStep = formSteps[active];	
+	currentStep = document.querySelector('.form-step.active');
+	// currentStep = formSteps[active];
+	// let activeStep = formSteps[active];	
 
 	let inputs = [...currentStep.querySelectorAll('input')];
 	

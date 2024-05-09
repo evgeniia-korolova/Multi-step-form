@@ -129,11 +129,11 @@
 									<label for="">Phone</label>
 									<input
 										type="tel"
-										placeholder="+xxx xxxxxxxxx"
+										placeholder="+xxxxxxxxxxxx"
 										data-val="true"
 										name="telInput"
-										data-pattern="[+][0-9]{3} [0-9]{2}[0-9]{3}[0-9]{4}"
-										data-required="Valid format +XXX XXXXXXXXX"
+										data-pattern="[+][0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}"
+										data-required="Valid format +XXXXXXXXXXXX"
 										data-error-label="telErrorLabel" />
 									<span
 										class="error"
@@ -145,7 +145,7 @@
 									<input
 										type="text"
 										name="cityInput"
-										pattern="[a-zA-Z]*"
+										pattern="[a-zA-Zа-яА-Я]*"
 										placeholder="City"
 										required />
 								</div>
@@ -203,9 +203,9 @@
 										type="password"
 										class="password-input"
 										name="password"
-										data-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+										data-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}"
 										data-val="true"
-										data-required="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+										data-required="Must contain at least one  number and one uppercase and lowercase letter, and at least 4 or more characters"
 										id="password"
 										autocomplete="off"
 										data-error-label="passwordErrorLabel" />
