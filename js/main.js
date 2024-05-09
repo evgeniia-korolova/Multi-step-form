@@ -18,6 +18,8 @@ const PSWD_EYE_SLASH_BTNS = document.querySelectorAll('.eye-slash');
 
 let active = 0;
 
+// ! Modals
+
 registerBtn.addEventListener('click', () => {
 	registerModal.classList.toggle('modal-overlay__hidden');
 })
@@ -36,15 +38,20 @@ closeLogin.addEventListener('click', () => {
 form.addEventListener('submit', onSubmitHandler);
 
 function onSubmitHandler(e) {
+	e.preventDefault();
 	for (let i = 0; i < form.elements.length; i++) {
 		const element = form.elements[i];
 		let valid = validateElement(element);
 		if (!valid) {
 			console.log('form invalid')
-			e.preventDefault();
+			
 			return false;
+		} else {
+			renderResults();
+			registerModal.classList.toggle('modal-overlay__hidden');
 		}
 	}
+	
 }
 
 
@@ -126,8 +133,6 @@ const updateProgress = () => {
 };
 
 
-
-// form.addEventListener('submit', onSubmitHandler);
 
 let elements = document.querySelectorAll("[data-val='true']");
 
@@ -236,3 +241,11 @@ function onChangeHandler(e) {
 				'password';
 		});
  });
+
+
+function renderResults() {
+	for (let i = 0; i < form.elements.length; i++) {
+		const element = form.elements[i];
+		console.log(element, element.value)
+	}
+ }
