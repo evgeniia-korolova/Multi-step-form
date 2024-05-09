@@ -25,8 +25,9 @@ registerBtn.addEventListener('click', () => {
   formSteps.forEach(step =>  {
     step.classList.remove('active');
   })
-  document.querySelector('.form-one').classList.add('active')
-  
+  // TODO: Ви вручну показували першу групу інпутів, при відкритті модального вікна.
+  formSteps[active].classList.add('active');
+  // document.querySelector('.form-one').classList.add('active')
 })
 closeReg.addEventListener('click', () => {
   registerModal.classList.toggle('modal-overlay__hidden');
