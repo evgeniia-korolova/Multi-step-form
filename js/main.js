@@ -22,6 +22,11 @@ let active = 0;
 
 registerBtn.addEventListener('click', () => {
 	registerModal.classList.toggle('modal-overlay__hidden');
+	formSteps.forEach(step =>  {
+		step.classList.remove('active');
+	})
+	document.querySelector('.form-one').classList.add('active')
+	
 })
 closeReg.addEventListener('click', () => {
 	registerModal.classList.toggle('modal-overlay__hidden');
@@ -40,6 +45,7 @@ form.addEventListener('submit', onSubmitHandler);
 function onSubmitHandler(e) {
 	e.preventDefault();
 	saveUser();
+	
 	for (let i = 0; i < form.elements.length; i++) {
 		const element = form.elements[i];
 		let valid = validateElement(element);
@@ -47,20 +53,23 @@ function onSubmitHandler(e) {
 			console.log('form invalid');			
 			return false;
 		} else {
-			// renderResults();
-			
 			registerModal.classList.toggle('modal-overlay__hidden');
 			form.reset();
+			console.log('form valid');	
+			active = 0;
 		}
 	}	
 }
+// function onSubmitHandler(e) {
+// 	e.preventDefault();
+// 	validatePage()
+// 	saveUser();
+// 	registerModal.classList.toggle('modal-overlay__hidden');
+// 	form.reset();
+	
+// }
 
-// function renderResults() {
-// 	for (let i = 0; i < form.elements.length; i++) {
-// 		const element = form.elements[i];
-// 		console.log(element, element.value)
-// 	}
-//  }
+
 
 function saveUser() {
 	const username = form.querySelector('.username').value;
@@ -82,23 +91,23 @@ function saveUser() {
 
 nextBtn.addEventListener('click', validatePage);
 
-
+// function renderResults() {
+// 	for (let i = 0; i < form.elements.length; i++) {
+// 		const element = form.elements[i];
+// 		console.log(element, element.value)
+// 	}
+//  }
 
 function validatePage() {
 if (active > steps.length) {
 	active = steps.length;
 }
 	let currentStep = document.querySelector('.form-step.active');
-	let activeStep = formSteps[active];
-	// console.log(currentStep);
-	// console.log(activeStep);
+	let activeStep = formSteps[active];	
 
 	let inputs = [...currentStep.querySelectorAll('input')];
-	let activeInputs = [...activeStep.querySelectorAll('input')];
-	// console.log('inputs', inputs)
-	// console.log('Active inputs', activeInputs)
-	// console.log(active, steps.length);
-
+	
+	
 	let allValid = inputs.every((input) => input.reportValidity());	
 	
 	for (let i = 0; i < inputs.length; i++) {
