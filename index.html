@@ -11,235 +11,337 @@
 			href="./style.css" />
 	</head>
 	<body>
-		<div
-			id="page"
-			class="site">
-			<div class="container">
-				<div class="form-box">
-					<div class="progress">
-						<ul class="progress-steps">
-							<li class="step active">
-								<span>1</span>
-								<p>Personal <br /><span></span></p>
-							</li>
-							<li class="step">
-								<span>2</span>
-								<p>Contacts <br /><span></span></p>
-							</li>
-							<li class="step">
-								<span>3</span>
-								<p>Security<br /><span></span></p>
-							</li>
-						</ul>
+		<section class="start-page">
+			<div class="container container__start">
+				<h1 class="start__title">Welcome to our site</h1>
+				<div class="start__description">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Ex impedit pariatur consequuntur deleniti beatae at
+						quibusdam quas explicabo sint nobis, animi molestiae
+						suscipit et vel deserunt labore distinctio laborum
+						voluptates! Nostrum delectus dicta facere et nemo
+						voluptas saepe velit exercitationem. Dolorem nulla ea
+						quaerat rem quam officia non eius temporibus! Sunt
+						adipisci magni recusandae reiciendis soluta. Iusto
+						libero amet facilis? Eveniet quia error fugit vero neque
+						qui mollitia sint. Aspernatur, dignissimos! Qui earum
+						expedita adipisci, voluptates rem quasi amet ipsa? Quam
+						nam quaerat praesentium dolorem fuga laborum voluptate
+						accusamus ea?
+					</p>
+				</div>
+
+				<div class="start__buttons-group">
+					<div class="sign-in">
+						<div>Are you registered?</div>
+						<div>Please log in</div>
+						<button type="button">Log in</button>
 					</div>
-					<form action="va.html">
-						<div class="form-one form-step active">
-							<h2>Personal information</h2>
-							<p>Enter your personal information correctly</p>
-							<div class="form-group">
-								<label for="">First Name</label>
-								<input
-									type="text"
-									name="firstNameInput"
-									pattern="[a-zA-Z]*"
-									placeholder="e.g. John"
-									required />
-							</div>
-							<div class="form-group">
-								<label for="">Last Name</label>
-								<input
-									type="text"
-									name="lastNameInput"
-									pattern="[a-zA-Z]*"
-									placeholder="e.g. Doe"
-									required />
-							</div>
-							<div class="birth form-group">
-								<label for="">Date of Birth</label>
-								<div class="groupping">
+					<div class="registration">
+						<div>Want to join our community?</div>
+						<div>Please register</div>
+						<button type="button">Register</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="modal registration">
+			<div
+				id="page"
+				class="site">
+				<div class="container registration__container">
+					<div class="form-box">
+						<div class="progress">
+							<ul class="progress-steps">
+								<li class="step active">
+									<span>1</span>
+									<p>Personal <br /><span></span></p>
+								</li>
+								<li class="step">
+									<span>2</span>
+									<p>Contacts <br /><span></span></p>
+								</li>
+								<li class="step">
+									<span>3</span>
+									<p>Security<br /><span></span></p>
+								</li>
+							</ul>
+						</div>
+						<form action="va.html" class="reg-form">
+							<div class="form-one form-step active">
+								<h2>Personal information</h2>
+								<p>Enter your personal information correctly</p>
+								<div class="form-group">
+									<label for="">First Name</label>
 									<input
-										type="number"
-										name="day"
-										min="0"
-										max="31"
-										placeholder="DD"
-										required />
-									<input
-										type="number"
-										name="month"
-										min="0"
-										max="12"
-										placeholder="MM"
-										required />
-									<input
-										type="number"
-										name="year"
-										min="0"
-										max="2024"
-										placeholder="YYYY"
+										type="text"
+										name="firstNameInput"
+										pattern="[a-zA-Z]*"
+										placeholder="e.g. John"
 										required />
 								</div>
+								<div class="form-group">
+									<label for="">Last Name</label>
+									<input
+										type="text"
+										name="lastNameInput"
+										pattern="[a-zA-Z]*"
+										placeholder="e.g. Doe"
+										required />
+								</div>
+								<div class="birth form-group">
+									<label for="">Date of Birth</label>
+									<div class="groupping">
+										<input
+											type="number"
+											name="day"
+											min="0"
+											max="31"
+											placeholder="DD"
+											required />
+										<input
+											type="number"
+											name="month"
+											min="0"
+											max="12"
+											placeholder="MM"
+											required />
+										<input
+											type="number"
+											name="year"
+											min="0"
+											max="2024"
+											placeholder="YYYY"
+											required />
+									</div>
+								</div>
 							</div>
-						</div>
 
-						<div class="form-two form-step">
-							<h2>Contacts</h2>
-							<div class="form-group">
-								<label for="">Phone</label>
-								<input
-									type="tel"
-									placeholder="+xxx xxxxxxxxx"
-									data-val="true"
-									name="telInput"
-									data-pattern="[+][0-9]{3} [0-9]{2}[0-9]{3}[0-9]{4}"
-									data-required="Valid format +XXX XXXXXXXXX"
-									data-error-label="telErrorLabel" />
-								<span
-									class="error"
-									id="telErrorLabel"></span>
+							<div class="form-two form-step">
+								<h2>Contacts</h2>
+								<div class="form-group">
+									<label for="">Phone</label>
+									<input
+										type="tel"
+										placeholder="+xxx xxxxxxxxx"
+										data-val="true"
+										name="telInput"
+										data-pattern="[+][0-9]{3} [0-9]{2}[0-9]{3}[0-9]{4}"
+										data-required="Valid format +XXX XXXXXXXXX"
+										data-error-label="telErrorLabel" />
+									<span
+										class="error"
+										id="telErrorLabel"></span>
+								</div>
+
+								<div class="form-group">
+									<label for="">City</label>
+									<input
+										type="text"
+										name="cityInput"
+										pattern="[a-zA-Z]*"
+										placeholder="City"
+										required />
+								</div>
+								<div class="form-group">
+									<label for="">Country</label>
+									<select
+										name="countryInput"
+										id="country"
+										required>
+										<option value="">Please select</option>
+										<option value="Ukraine">Ukraine</option>
+										<option value="Ukraine">USA</option>
+										<option value="Ukraine">
+											Greate Britain
+										</option>
+										<option value="Ukraine">France</option>
+										<option value="Ukraine">Italy</option>
+										<option value="Ukraine">Spain</option>
+									</select>
+								</div>
 							</div>
 
-							<div class="form-group">
-								<label for="">City</label>
-								<input
-									type="text"
-									name="cityInput"
-									pattern="[a-zA-Z]*"
-									placeholder="City"
-									required />
-							</div>
-							<div class="form-group">
-								<label for="">Country</label>
-								<select
-									name="countryInput"
-									id="country"
-									required>
-									<option value="">Please select</option>
-									<option value="Ukraine">Ukraine</option>
-									<option value="Ukraine">USA</option>
-									<option value="Ukraine">
-										Greate Britain
-									</option>
-									<option value="Ukraine">France</option>
-									<option value="Ukraine">Italy</option>
-									<option value="Ukraine">Spain</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="form-three form-step">
-							<h2>Security</h2>
-							<div class="form-group">
-								<label for="">Email</label>
-								<input
-									type="email"
-									name="emailInput"
-									data-val="true"
-									data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-									placeholder="Your email"
-									data-error-label="emailErrorLabel"
-									data-required="Valid format xxx@xxx.xxx"
-									requred />
-								<span
-									class="error"
-									id="emailErrorLabel"></span>
-							</div>
-							<div class="form-group">
-								<label for="">Username</label>
-								<input
-									type="text"
-									name="usernamedInput"
-									placeholder="Username"
-									required />
-							</div>
-							<div class="form-group">
-								<label for="">Password</label>
-								<input
-									type="password"
-									class="password-input"
-									name="password"
-									data-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-									data-val="true"
-									data-required="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-									id="password"
-									autocomplete="off"
-									data-error-label="passwordErrorLabel" />
-								<img
-									class="eye hidden"
-									id="eye"
-									src="./img/eye.svg"
-									alt="hide password" />
-								<img
-									class="eye-slash"
-									id="eye-slash"
-									src="./img/eye-slash.svg"
-									alt="show password" />
-								<span
-									class="error"
-									id="passwordErrorLabel"></span>
-							</div>
-							<div class="form-group">
-								<label for="">Confirm Password</label>
-								<input
-									type="password"
-									class="password-input"
-									name="passwordConfirm"
-									id="passwordConfirm"
-									data-val="true"
-									data-required="Enter your password"
-									data-confirm="password"
-									autocomplete="off"
-									data-error-label="passwordConfirmErrorLabel" />
+							<div class="form-three form-step">
+								<h2>Security</h2>
+								<div class="form-group">
+									<label for="">Email</label>
+									<input
+										type="email"
+										name="emailInput"
+										data-val="true"
+										data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+										placeholder="Your email"
+										data-error-label="emailErrorLabel"
+										data-required="Valid format xxx@xxx.xxx"
+										requred />
+									<span
+										class="error"
+										id="emailErrorLabel"></span>
+								</div>
+								<div class="form-group">
+									<label for="">Username</label>
+									<input
+										type="text"
+										name="usernamedInput"
+										placeholder="Username"
+										required />
+								</div>
+								<div class="form-group">
+									<label for="">Password</label>
+									<input
+										type="password"
+										class="password-input"
+										name="password"
+										data-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+										data-val="true"
+										data-required="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+										id="password"
+										autocomplete="off"
+										data-error-label="passwordErrorLabel" />
 									<img
-									class="eye hidden"
-									id="eye"
-									src="./img/eye.svg"
-									alt="hide password" />
-								<img
-									class="eye-slash"
-									id="eye-slash"
-									src="./img/eye-slash.svg"
-									alt="show password" />
-								<span
-									class="error"
-									id="passwordConfirmErrorLabel"></span>
+										class="eye hidden"
+										id="eye"
+										src="./img/eye.svg"
+										alt="hide password" />
+									<img
+										class="eye-slash"
+										id="eye-slash"
+										src="./img/eye-slash.svg"
+										alt="show password" />
+									<span
+										class="error"
+										id="passwordErrorLabel"></span>
+								</div>
+								<div class="form-group">
+									<label for="">Confirm Password</label>
+									<input
+										type="password"
+										class="password-input"
+										name="passwordConfirm"
+										id="passwordConfirm"
+										data-val="true"
+										data-required="Enter your password"
+										data-confirm="password"
+										autocomplete="off"
+										data-error-label="passwordConfirmErrorLabel" />
+									<img
+										class="eye hidden"
+										id="eye"
+										src="./img/eye.svg"
+										alt="hide password" />
+									<img
+										class="eye-slash"
+										id="eye-slash"
+										src="./img/eye-slash.svg"
+										alt="show password" />
+									<span
+										class="error"
+										id="passwordConfirmErrorLabel"></span>
+								</div>
+								<div class="checkbox form-group">
+									<input
+										type="checkbox"
+										name="acceptedInput"
+										required />
+									<label for=""
+										>Accept terms and conditions</label
+									>
+								</div>
 							</div>
-							<div class="checkbox form-group">
-								<input
-									type="checkbox"
-									name="acceptedInput"
-									required />
-								<label for=""
-									>Accept terms and conditions</label
-								>
-							</div>
-						</div>
 
-						<div class="btn-group">
+							<div class="btn-group">
+								<button
+									type="button"
+									class="btn btn-prev"
+									disabled>
+									Back
+								</button>
+								<button
+									type="button"
+									class="btn btn-next">
+									Next Step
+								</button>
+								<button
+									type="submit"
+									class="btn btn-submit">
+									Submit
+								</button>
+							</div>
 							<button
 								type="button"
-								class="btn btn-prev"
-								disabled>
-								Back
+								class="result">
+								Result
 							</button>
-							<button
-								type="button"
-								class="btn btn-next">
-								Next Step
-							</button>
-							<button
-								type="submit"
-								class="btn btn-submit">
-								Submit
-							</button>
-						</div>
-						<button type="button" class="result">Result</button>
-					</form>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<script type="module" src="./main.js"></script>
-		<script type="module" src="./data.js"></script>
+		<div class="modal sign-in">
+			<div
+				id="login"
+				class="site">
+				<div class="container login__container">
+					<div class="form-box">
+						<form action="" class="login-form">
+							<div class="form__content">
+								<h2>Please login</h2>
+								<div class="form-group">
+									<label for="">Email</label>
+									<input
+										type="email"
+										name="emailInput"
+										data-val="true"
+										data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+										placeholder="Your email"
+										data-error-label="emailErrorLabel2"
+										data-required="Valid format xxx@xxx.xxx"
+										requred />
+									<span
+										class="error"
+										id="emailErrorLabel2"></span>
+								</div>
+								<div class="form-group">
+									<label for="">Password</label>
+									<input
+										type="password"
+										class="password-input"
+										name="password"
+										data-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+										data-val="true"
+										data-required="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+										id="password2"
+										autocomplete="off"
+										data-error-label="passwordErrorLabel2" />
+									<img
+										class="eye hidden"
+										id="eye"
+										src="./img/eye.svg"
+										alt="hide password" />
+									<img
+										class="eye-slash"
+										id="eye-slash"
+										src="./img/eye-slash.svg"
+										alt="show password" />
+									<span
+										class="error"
+										id="passwordErrorLabel2"></span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script
+			type="module"
+			src="./js//main.js"></script>
+		<!-- <script
+			type="module"
+			src="./js/data.js"></script> -->
 	</body>
 </html>

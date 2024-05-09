@@ -63,6 +63,34 @@ img {
 	margin-top: 3em;
 }
 
+.start__description {
+	margin-bottom: 30px;
+	line-height: 1.5;
+}
+
+.start__description p {
+	text-align: justify;
+}
+
+.start__buttons-group {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.start__buttons-group > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+}
+
+/* start-page */
+
+h1 {
+	text-align: center;
+	margin-bottom: 2em;
+}
+
 .form-box {
 	display: flex;
 	flex-direction: column;
@@ -141,7 +169,7 @@ form > div p {
 	margin-bottom: 2em;
 }
 
-form > div > div:not(.checkbox) {
+.reg-form > div > div:not(.checkbox) {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 2em;
@@ -183,7 +211,7 @@ form .checkbox input {
 	height: auto;
 }
 
-form > div:not(.btn-group) {
+.reg-form > div:not(.btn-group) {
 	display: none;
 	animation: fadeIn 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
@@ -219,7 +247,7 @@ form > div:not(.btn-group) {
 	}
 }
 
-form > div.active {
+.reg-form > div.active {
 	display: block;
 }
 
@@ -245,7 +273,8 @@ input:not(:placeholder-shown):invalid {
 	margin-top: 2em;
 }
 
-.btn-group [class*='btn-'] {
+.btn-group [class*='btn-'],
+button {
 	background: var(--main-color);
 	color: white;
 	padding: 0.5em 1.5em;
@@ -280,6 +309,25 @@ input:not(:placeholder-shown):invalid {
 ::placeholder {
 	color: var(--lighter-color);
 	font-size: var(--font-smaller);
+}
+
+/* login */
+
+.login__container {
+	margin-bottom: 1em;
+}
+
+.login-form > .form__content {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+	
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	
 }
 
 @media screen and (min-width: 768px) {
