@@ -68,10 +68,10 @@ function onSubmitHandler(e) {
 	e.preventDefault();
 	saveUser();
 	validatePage();
-	form.reset();
 	active = 0;
 	updateProgress();
 	registerModal.classList.toggle('modal-overlay__hidden');
+	form.reset();
 	console.log(active, steps.length);
 	
 }
@@ -111,9 +111,7 @@ if (active > steps.length) {
 	active = steps.length;
 }
 	currentStep = document.querySelector('.form-step.active');
-	// currentStep = formSteps[active];
-	// let activeStep = formSteps[active];	
-
+	
 	let inputs = [...currentStep.querySelectorAll('input')];
 	
 	
@@ -136,6 +134,7 @@ if (allValid) {
 	console.log(active, steps.length);
 } else {
 	console.log('Invalid input');
+	return;
 }
 }
 
