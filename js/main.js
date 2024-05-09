@@ -39,23 +39,45 @@ form.addEventListener('submit', onSubmitHandler);
 
 function onSubmitHandler(e) {
 	e.preventDefault();
+	saveUser();
 	for (let i = 0; i < form.elements.length; i++) {
 		const element = form.elements[i];
 		let valid = validateElement(element);
 		if (!valid) {
-			console.log('form invalid')
-			
+			console.log('form invalid');			
 			return false;
 		} else {
-			renderResults();
+			// renderResults();
+			
 			registerModal.classList.toggle('modal-overlay__hidden');
+			form.reset();
 		}
-	}
-	
+	}	
 }
 
+// function renderResults() {
+// 	for (let i = 0; i < form.elements.length; i++) {
+// 		const element = form.elements[i];
+// 		console.log(element, element.value)
+// 	}
+//  }
 
-// resultBtn.addEventListener('click', renderResult)
+function saveUser() {
+	const username = form.querySelector('.username').value;
+	const email = form.querySelector('.email').value;
+	const password = form.querySelector('.password-input').value;
+	 let userObj = {
+		 username,
+		 email,
+		 password,
+	}
+	
+	let usersArr = [];
+	usersArr.push(userObj);
+	console.log(usersArr);
+
+	localStorage.setItem('users', JSON.stringify(usersArr));
+ }
 
 
 nextBtn.addEventListener('click', validatePage);
@@ -63,30 +85,26 @@ nextBtn.addEventListener('click', validatePage);
 
 
 function validatePage() {
-
 if (active > steps.length) {
 	active = steps.length;
 }
 	let currentStep = document.querySelector('.form-step.active');
 	let activeStep = formSteps[active];
-	console.log(currentStep);
-	console.log(activeStep);
+	// console.log(currentStep);
+	// console.log(activeStep);
 
 	let inputs = [...currentStep.querySelectorAll('input')];
 	let activeInputs = [...activeStep.querySelectorAll('input')];
-	console.log('inputs', inputs)
-	console.log('Active inputs', activeInputs)
-	console.log(active, steps.length);
+	// console.log('inputs', inputs)
+	// console.log('Active inputs', activeInputs)
+	// console.log(active, steps.length);
 
-	let allValid = inputs.every((input) => input.reportValidity());
-
-	
+	let allValid = inputs.every((input) => input.reportValidity());	
 	
 	for (let i = 0; i < inputs.length; i++) {
 		const element = inputs[i];
 		let valid = validateElement(element);
-		if (!valid) {
-			
+		if (!valid) {			
 			return;
 		}
 	}
@@ -243,9 +261,3 @@ function onChangeHandler(e) {
  });
 
 
-function renderResults() {
-	for (let i = 0; i < form.elements.length; i++) {
-		const element = form.elements[i];
-		console.log(element, element.value)
-	}
- }
