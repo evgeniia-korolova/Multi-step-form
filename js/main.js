@@ -10,6 +10,7 @@ const registerModal = document.querySelector('#registration-overlay');
 const loginModal = document.querySelector('#login-overlay');
 const closeReg = document.querySelector('.close-registration');
 const closeLogin = document.querySelector('.close-login');
+const loginForm = document.querySelector('.login-form');
 
 const resultBtn = document.querySelector('.result')
 
@@ -38,7 +39,30 @@ closeLogin.addEventListener('click', () => {
 	loginModal.classList.toggle('modal-overlay__hidden');
 })
 
+loginForm.addEventListener('submit', doLogin);
 
+function doLogin() {
+	let loginEmail = document.querySelector('#login-email').value;
+	let loginPassword = document.querySelector('#login-password').value;
+
+	
+	let usersArr = JSON.parse(localStorage.getItem('users')) || [];
+	let exist =
+		usersArr.length &&
+		JSON.parse(localStorage.getItem('users')).some(
+			(data) =>
+				data.email == loginEmail &&
+				data.password == loginPassword
+		);
+	
+	if (!exist) {
+		alert('Incorrect login credentials');
+	} else {
+		alert('Ура! Я её победила!')
+		location.href = '/';
+	}
+	e.preventDefault();
+}
 
 form.addEventListener('submit', onSubmitHandler);
 

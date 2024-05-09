@@ -310,6 +310,7 @@
 									<input
 										type="email"
 										name="emailInput"
+										id="login-email"
 										data-val="true"
 										data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
 										placeholder="Your email"
@@ -326,7 +327,8 @@
 										type="password"
 										class="password-input"
 										name="password"
-										data-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+										id="login-password"
+										data-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}"
 										data-val="true"
 										data-required="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
 										id="password2"
@@ -345,6 +347,9 @@
 									<span
 										class="error"
 										id="passwordErrorLabel2"></span>
+								</div>
+								<div class="button-group">
+									<button type="submit" class="btn" id="login-form-submit">Log in</button>
 								</div>
 							</div>
 						</form>
