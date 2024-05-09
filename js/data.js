@@ -79,22 +79,26 @@ function saveUser() {
 	const email = form.querySelector('.email').value;
 	const password = form.querySelector('.password-input').value;
 
-	let userObj = {
-		username,
-		email,
-		password,
-	};
-
+	
 	let usersArr = JSON.parse(localStorage.getItem('users')) || [];
-	usersArr.push(userObj);
-	console.log(usersArr, userObj);
 
-	localStorage.setItem('users', JSON.stringify(usersArr));
+	
+	let exist =
+		usersArr.length &&
+		JSON.parse(localStorage.getItem('users')).some(
+			(data) => data.email == email);
+	if (!exist) {
+		usersArr.push({ username: username, email: email, password: password });
+		localStorage.setItem('users', JSON.stringify(usersArr));
+	} else {
+		alert('You are registered')
+	}	
+		
+	console.log(usersArr);
 }
 
+
 nextBtn.addEventListener('click', validatePage);
-
-
 
 function validatePage() {
 	if (active > steps.length) {
