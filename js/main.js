@@ -16,6 +16,8 @@ const resultBtn = document.querySelector('.result')
 const PSWD_EYE_BTNS = document.querySelectorAll('.eye');
 const PSWD_EYE_SLASH_BTNS = document.querySelectorAll('.eye-slash');
 
+
+
 let active = 0;
 let currentStep;
 
@@ -75,9 +77,6 @@ function onSubmitHandler(e) {
 }
 
 
-
-
-
 function saveUser() {
 	const username = form.querySelector('.username').value;
 	const email = form.querySelector('.email').value;
@@ -89,7 +88,7 @@ function saveUser() {
 		 password,
 	}
 
-		let usersArr = [];
+	let usersArr = JSON.parse(localStorage.getItem('users')) || [];	
 	usersArr.push(userObj);
 	console.log(usersArr, userObj);
 	
@@ -107,7 +106,7 @@ nextBtn.addEventListener('click', validatePage);
 // 	}
 //  }
 
-function validatePage() {
+function validatePage(e) {
 if (active > steps.length) {
 	active = steps.length;
 }
@@ -123,8 +122,10 @@ if (active > steps.length) {
 	for (let i = 0; i < inputs.length; i++) {
 		const element = inputs[i];
 		let valid = validateElement(element);
-		if (!valid) {			
-			return;
+		if (!valid) {	
+			console.log('invalid sbmit')
+			e.preventDefault();
+			return false;
 		}
 	}
 
